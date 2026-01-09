@@ -4,8 +4,8 @@ public class Patient extends Person {
     private String disease ;
     private boolean admitted ;
 
-    public Patient(int ID, String fullName, int age, String phone , String disease , boolean admitted) {
-        super(ID, fullName, age, phone);
+    public Patient(int id, String fullName, int age, String phone , String disease , boolean admitted) {
+        super(id, fullName, age, phone);
         this.disease=disease;
         this.admitted=admitted;
     }
@@ -32,8 +32,8 @@ public class Patient extends Person {
     @Override
     public String toString() {
         return super.toString() +
-                " | Disease: " + disease +
-                ", Admitted: " + (admitted ? "Yes" : "No");
+                "\nDisease: " + disease +
+                "\nAdmitted: " + (admitted ? "Yes" : "No");
 
     }
 }

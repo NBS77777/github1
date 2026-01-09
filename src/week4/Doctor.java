@@ -4,8 +4,8 @@ public class Doctor extends Person {
     private String specialization ;
     private int experienceYears ;
 
-    public Doctor (int ID, String fullName , int age , String phone , String specialization , int experienceYears  ){
-        super(ID , fullName , age , phone);
+    public Doctor (int id, String fullName , int age , String phone , String specialization , int experienceYears  ){
+        super(id , fullName , age , phone);
         this.specialization=specialization;
         this.experienceYears=experienceYears;
     }
@@ -32,7 +32,7 @@ public class Doctor extends Person {
     @Override
     public String toString() {
         return super.toString() +
-                " | Specialization: " + specialization +
-                ", Experience: " + experienceYears + " years";
+                "\nSpecialization: " + specialization +
+                "\nExperience: " + experienceYears + " years";
     }
 }

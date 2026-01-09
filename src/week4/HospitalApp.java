@@ -9,7 +9,7 @@ public class HospitalApp {
     public static void main(String[] args){
 
         people.add(new Person(1, "Ali Bek", 45, "87011111111"));
-        people.add(new Doctor(2, "Dr. Aigerim", 38, "87022222222", "Cardiology", 12));
+        people.add(new Doctor(2, "Dr.Aigerim", 38, "87022222222", "Cardiology", 12));
         people.add(new Patient(3, "Nurasyl", 17, "87033333333", "Flu", true));
 
         boolean running = true;

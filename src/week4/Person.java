@@ -28,9 +28,9 @@ public class Person {
     @Override
     public String toString() {
         return "[" + getRole() +"]" + fullName +
-                "(" + "ID:" + id +
-                "AGE:" + age +
-                "PHONE:" + phone + ")";
+                "{" + "\nID:" + id +
+                "\nAGE:" + age +
+                "\nPHONE:" + phone + "}";
     }
 }
 
