@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/hospital_db.sql" value="87823d24-a99f-40ca-a1ee-1477befc68c4" />
+    <file url="file://$PROJECT_DIR$/src/HospitalManagementSystem/database/StaffDAO.java" value="87823d24-a99f-40ca-a1ee-1477befc68c4" />
+  </component>
+</project>
