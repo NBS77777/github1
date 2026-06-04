@@ -226,33 +226,30 @@ public class StaffDAO {
         return false;
     }
 
-    public boolean updatePatient(Patient patient) {
+    public boolean updatePatient(Patient patient){
         String sql = "UPDATE staff SET full_name = ? , age = ? , phone = ? , disease = ? , admitted = ?" +
-                "WHERE staff_id = ? AND staff_type = 'PATIENT'";
+                "WHERE  staff_id = ? AND staff_type = 'PATIENT'";
         Connection connection = DatabaseConnection.getConnection();
-        if (connection == null) {
-            return false;
+        if(connection == null){
+            return  false;
         }
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, patient.getFullName());
-            statement.setInt(2, patient.getAge());
-            statement.setString(3, patient.getPhone());
-            statement.setString(4, patient.getDisease());
-            statement.setBoolean(5, patient.getAdmitted());
-            statement.setInt(6, patient.getId());
+            statement.setInt(2 , patient.getAge());
+            statement.setString(1 , patient.getPhone());
+            statement.setString(3 , patient.getDisease());
+            statement.setBoolean(5 , patient.getAdmitted());
+            statement.setInt(6 , patient.getId());
 
-            int rowUpdated = statement.executeUpdate();
-            if (rowUpdated > 0) {
-                System.out.println("Patient updated: + patient.getFullName()");
+            int rowUp = statement.executeUpdate();
+            if(rowUp > 0 ){
+                System.out.println("Updatede patient" + patient.getFullName());
                 return true;
-            }else{
-                System.out.println("No Patient found with ID: + patient.getId());");
             }
 
         }catch (SQLException e){
-            System.out.println("Update patient failed!");
-            e.printStackTrace();
+            System.out.println("Update patient filede");
         }finally {
             DatabaseConnection.closeConnection(connection);
         }
@@ -260,27 +257,23 @@ public class StaffDAO {
     }
 
     public boolean deletestaff(int staffId) {
-        String sql = "DELETE FROM staff WHERE staff_id = ?";
-
+        String sql = "DELETE  FROM staff WHERE staff_id = ?";
         Connection connection = DatabaseConnection.getConnection();
-        if (connection == null)
+        if (connection == null){
             return false;
+        }
 
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, staffId);
-
-            int rowsDelete = statement.executeUpdate();
-
-            if (rowsDelete > 0) {
-                System.out.println("Staff deleted: " + staffId);
+            statement.setInt(1 , staffId);
+            int rowDeleted = statement.executeUpdate();
+            if (rowDeleted > 0) {
+                System.out.println("Deleted staff" + staffId);
                 return true;
-            }else  {
-                System.out.println("No Staff found with ID: " + staffId);
             }
 
-        } catch (SQLException e) {
-            System.out.println("Delete Doctor failed!");
+        }catch (SQLException e){
+            System.out.println("Delete filed");
             e.printStackTrace();
         }finally {
             DatabaseConnection.closeConnection(connection);
